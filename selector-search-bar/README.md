@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Multi-Selector Search Bar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview:
 
-## Available Scripts
+This React component implements a multi-selector search bar that allows users to search for and select multiple users. Selected users are displayed as pill components above the search bar, and users can be removed by clicking on the respective pills.
 
-In the project directory, you can run:
+## Features:
 
-### `npm start`
+- **Search Bar:** Users can input search terms, and suggestions are displayed dynamically based on the input.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Suggestions:** As users type in the search bar, suggestions are fetched from a dummy API (https://dummyjson.com/users/search).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Selection:** Users can select a suggestion by clicking on it. The selected user is displayed as a pill above the search bar.
 
-### `npm test`
+- **Removal:** Selected users can be removed by clicking on their respective pills. Backspace can also be used to remove the last selected user.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage:
 
-### `npm run build`
+1. **Installation:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - Clone the repository.
+   - Navigate to the project directory.
+   - Run `npm install` to install dependencies.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Running the App:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   - Run `npm start` to start the development server.
+   - Open your browser and go to `http://localhost:3000` to view the multi-selector search bar.
 
-### `npm run eject`
+3. **Functionality:**
+   - Start typing in the search bar to see dynamic suggestions.
+   - Click on a suggestion to select a user. The selected user will appear as a pill above the search bar.
+   - Selected users can be removed by clicking on their respective pills or using the Backspace key.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Component Structure:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **SearchBar Component:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  - Manages the state for the search term, suggestions, selected users, and selected users set.
+  - Uses the `useEffect` hook to fetch suggestions from the dummy API based on the search term.
+  - Provides methods to handle selecting and removing users.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Pills Component:**
+  - Represents the pill component for a selected user.
+  - Displays the user's image and name.
+  - Allows users to remove the selected user by clicking on the pill.
 
-## Learn More
+## Additional Notes:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- This solution uses React Hooks (useState, useRef, useEffect).
+- The selected users are stored in an array (`selectedUsers`) and a set (`selectedUsersSet`) for efficient removal.
+- CSS styles are applied to create a visually appealing and responsive user interface.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to reach out if you have any questions or suggestions for improvement!
