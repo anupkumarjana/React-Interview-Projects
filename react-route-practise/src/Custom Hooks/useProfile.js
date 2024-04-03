@@ -6,6 +6,7 @@ export const useProfile = () => {
   const { id } = useParams();
   useEffect(() => {
     fetchProfileData();
+    //eslint-disable-next-line
   },[id]);
   const fetchProfileData = async () => {
     const rawData = await fetch(`https://dummyjson.com/users/${id}`);
