@@ -1,11 +1,9 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
-import About from "./Components/About";
 import Services from "./Components/Services";
 import Contact from "./Components/Contact";
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import Users from "./Components/Users";
 import UserProfile from "./Components/UserProfile";
 
 function App() {
@@ -16,6 +14,7 @@ function App() {
     </>
   );
 }
+const About = lazy(() => import("./Components/About"));
 export const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +26,12 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback=<h1>Loading...</h1>>
+            {/* // without fallback it will throw error */}
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/services",
