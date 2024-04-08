@@ -98,9 +98,6 @@ function SearchBar() {
 
       <ul className=" p-4 w-56 max-h-96 overflow-y-scroll no-scrollbar">
         {suggestions?.users?.map((user) => {
-          {
-            /* console.log(user); */
-          }
           return !selectedUsersSet.has(user.id) ? (
             <li
               key={user.id}
