@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+}
+#quote-box {
+  max-width: 600px;
+  max-height: 300px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#text {
+  text-wrap: wrap;
+  padding: 30px;
+  font-size: 2rem;
+  /* position: relative; */
+}
+#author {
+  text-align: right;
+}
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
