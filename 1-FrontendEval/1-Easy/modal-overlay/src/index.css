@@ -1,0 +1,34 @@
+
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.modal{
+  border: 1px solid green;
+  padding: 20px;
+  position: absolute;
+  background-color: aquamarine;
+  z-index: 2;
+}
+button{
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.overlay{
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.174);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+
+}
